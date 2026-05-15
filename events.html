@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events – Zion Prayer Tower ATP</title>
+    <meta name="description" content="Upcoming events at Zion Prayer Tower ATP — prayer nights, youth camp, outreach, and more." />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <nav class="nav">
+        <a class="nav-brand" href="index.html">✝ ZION PRAYER TOWER</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html" class="active">Events</a></li>
+            <li><a href="prayer.html">Prayer</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Upcoming Events</h1>
+        <p>What's Coming</p>
+    </div>
+
+    <!-- REPLACE THE GOOGLE CALENDAR SRC WITH YOUR EMBED URL -->
+    <section id="events">
+        <p class="section-label reveal">What's Coming</p>
+        <h2 class="section-title reveal">Upcoming Events</h2>
+        <div class="section-rule reveal"><span class="section-rule-icon">📅</span></div>
+
+        <div class="events-layout">
+            <div class="events-list reveal">
+                <!-- UPDATE THESE EVENTS AS NEEDED -->
+                <div class="event-item">
+                    <div class="event-date"><div class="eday">4</div><div class="emon">May</div></div>
+                    <div class="event-info">
+                        <div class="etitle">Sunday School Anniversary</div>
+                        <div class="edesc">Annual celebration for our children's ministry</div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date"><div class="eday">11</div><div class="emon">May</div></div>
+                    <div class="event-info">
+                        <div class="etitle">All-Night Prayer Meeting</div>
+                        <div class="edesc">Corporate intercession — all are welcome</div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date"><div class="eday">25</div><div class="emon">May</div></div>
+                    <div class="event-info">
+                        <div class="etitle">Youth Camp 2026</div>
+                        <div class="edesc">2-day retreat for young adults and teens</div>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-date"><div class="eday">1</div><div class="emon">Jun</div></div>
+                    <div class="event-info">
+                        <div class="etitle">Community Outreach</div>
+                        <div class="edesc">Serving families in Avinashi — volunteers welcome</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gcal-wrap reveal">
+                <iframe id="gcal-embed"
+                    src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40group.calendar.google.com&ctz=Asia%2FKolkata&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH"
+                    title="Church Calendar">
+                </iframe>
+                <p class="gcal-note">📅 Live calendar — updated by church administration</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>✝ Zion Prayer Tower ATP</h2>
+                <p>Where GOD Meets His People.<br>Avinashi Town Panchayat, Tamil Nadu, India.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook">fb</a>
+                    <a href="#" title="YouTube">yt</a>
+                    <a href="#" title="Instagram">ig</a>
+                    <a href="#" title="WhatsApp">wa</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Service Times</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="prayer.html">Prayer Request</a></li>
+                    <li><a href="give.html">Give / Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Zion Prayer Tower ATP &nbsp;·&nbsp; zionprayertoweratp.org &nbsp;·&nbsp; All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

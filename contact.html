@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us – Zion Prayer Tower ATP</title>
+    <meta name="description" content="Get in touch with Zion Prayer Tower ATP — address, phone, email, and a contact form to send us a message." />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <nav class="nav">
+        <a class="nav-brand" href="index.html">✝ ZION PRAYER TOWER</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="prayer.html">Prayer</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Contact Us</h1>
+        <p>Reach Out</p>
+    </div>
+
+    <!-- REPLACE YOUR_FORM_ID, YOUR_MAPS_EMBED_URL with actual values -->
+    <section id="contact" class="alt">
+        <p class="section-label reveal">Reach Out</p>
+        <h2 class="section-title reveal">Contact Us</h2>
+        <div class="section-rule reveal"><span class="section-rule-icon">✉️</span></div>
+
+        <div class="contact-layout">
+            <div class="contact-info reveal">
+                <div class="c-row">
+                    <div class="c-icon">📍</div>
+                    <div>
+                        <div class="c-label">Address</div>
+                        <div class="c-val">Zion Prayer Tower, Avinashi Town Panchayat,<br>Tamil Nadu – 641 654</div>
+                    </div>
+                </div>
+                <div class="c-row">
+                    <div class="c-icon">📞</div>
+                    <div>
+                        <div class="c-label">Phone</div>
+                        <div class="c-val">+91 XXXXX XXXXX</div>
+                    </div>
+                </div>
+                <div class="c-row">
+                    <div class="c-icon">✉️</div>
+                    <div>
+                        <div class="c-label">Email</div>
+                        <div class="c-val">info@zionprayertoweratp.org</div>
+                    </div>
+                </div>
+                <div class="c-row">
+                    <div class="c-icon">🕐</div>
+                    <div>
+                        <div class="c-label">Office Hours</div>
+                        <div class="c-val">Mon – Sat: 9:00 AM – 5:00 PM</div>
+                    </div>
+                </div>
+                <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAPS_EMBED_URL" width="100%" height="180"
+                    style="border:0; border-radius:4px; margin-top:8px;" allowfullscreen="" loading="lazy"
+                    title="Church Location">
+                </iframe>
+            </div>
+
+            <!-- Formspree contact form — REPLACE YOUR_FORM_ID -->
+            <div class="contact-form reveal">
+                <h3>Send Us a Message</h3>
+                <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                    <div class="form-row">
+                        <label for="cf-name">Your Name</label>
+                        <input type="text" id="cf-name" name="name" placeholder="e.g. Samuel Paul" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="cf-email">Email Address</label>
+                        <input type="email" id="cf-email" name="email" placeholder="you@example.com" required />
+                    </div>
+                    <div class="form-row">
+                        <label for="cf-phone">Phone (optional)</label>
+                        <input type="tel" id="cf-phone" name="phone" placeholder="+91 XXXXX XXXXX" />
+                    </div>
+                    <div class="form-row">
+                        <label for="cf-msg">Message</label>
+                        <textarea id="cf-msg" name="message" placeholder="How can we help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Message ✝</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>✝ Zion Prayer Tower ATP</h2>
+                <p>Where GOD Meets His People.<br>Avinashi Town Panchayat, Tamil Nadu, India.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook">fb</a>
+                    <a href="#" title="YouTube">yt</a>
+                    <a href="#" title="Instagram">ig</a>
+                    <a href="#" title="WhatsApp">wa</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Service Times</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="prayer.html">Prayer Request</a></li>
+                    <li><a href="give.html">Give / Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Zion Prayer Tower ATP &nbsp;·&nbsp; zionprayertoweratp.org &nbsp;·&nbsp; All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

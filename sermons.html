@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sermons – Zion Prayer Tower ATP</title>
+    <meta name="description" content="Watch recent sermons from Zion Prayer Tower ATP. Be fed by the Word of God preached by our pastors." />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <nav class="nav">
+        <a class="nav-brand" href="index.html">✝ ZION PRAYER TOWER</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="sermons.html" class="active">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="prayer.html">Prayer</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Sermons</h1>
+        <p>The Word Preached</p>
+    </div>
+
+    <!-- REPLACE VIDEO_ID_1 / VIDEO_ID_2 / VIDEO_ID_3 with actual YouTube video IDs -->
+    <section id="sermons" class="alt">
+        <p class="section-label reveal">The Word Preached</p>
+        <h2 class="section-title reveal">Recent Sermons</h2>
+        <div class="section-rule reveal"><span class="section-rule-icon">📖</span></div>
+
+        <div class="sermons-grid">
+            <div class="sermon-card reveal">
+                <div class="yt-wrap">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Sermon 1"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="sermon-info">
+                    <div class="sermon-title">Abiding in the Vine</div>
+                    <div class="sermon-meta">Pastor Name &nbsp;·&nbsp; April 2026</div>
+                </div>
+            </div>
+            <div class="sermon-card reveal">
+                <div class="yt-wrap">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Sermon 2"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="sermon-info">
+                    <div class="sermon-title">The Gardener's Promise</div>
+                    <div class="sermon-meta">Pastor Name &nbsp;·&nbsp; April 2026</div>
+                </div>
+            </div>
+            <div class="sermon-card reveal">
+                <div class="yt-wrap">
+                    <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Sermon 3"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="sermon-info">
+                    <div class="sermon-title">Bearing Much Fruit</div>
+                    <div class="sermon-meta">Pastor Name &nbsp;·&nbsp; March 2026</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>✝ Zion Prayer Tower ATP</h2>
+                <p>Where GOD Meets His People.<br>Avinashi Town Panchayat, Tamil Nadu, India.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook">fb</a>
+                    <a href="#" title="YouTube">yt</a>
+                    <a href="#" title="Instagram">ig</a>
+                    <a href="#" title="WhatsApp">wa</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Service Times</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="prayer.html">Prayer Request</a></li>
+                    <li><a href="give.html">Give / Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Zion Prayer Tower ATP &nbsp;·&nbsp; zionprayertoweratp.org &nbsp;·&nbsp; All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Times – Zion Prayer Tower ATP</title>
+    <meta name="description" content="Join us for Sunday morning worship, Wednesday Bible Study, and Friday Night Vigil at Zion Prayer Tower ATP in Avinashi." />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <nav class="nav">
+        <a class="nav-brand" href="index.html">✝ ZION PRAYER TOWER</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="prayer.html">Prayer</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Service Times</h1>
+        <p>Gather With Us</p>
+    </div>
+
+    <section id="services" class="dark">
+        <p class="section-label reveal">Gather With Us</p>
+        <h2 class="section-title reveal">Service Times</h2>
+        <div class="section-rule reveal"><span class="section-rule-icon">🕐</span></div>
+
+        <div class="times-grid">
+            <div class="time-card reveal">
+                <div class="t-day">Sunday</div>
+                <div class="t-time">7:00 AM</div>
+                <div class="t-label">Morning Prayer</div>
+            </div>
+            <div class="time-card reveal">
+                <div class="t-day">Sunday</div>
+                <div class="t-time">10:00 AM</div>
+                <div class="t-label">Main Worship Service</div>
+            </div>
+            <div class="time-card reveal">
+                <div class="t-day">Wednesday</div>
+                <div class="t-time">6:30 PM</div>
+                <div class="t-label">Bible Study</div>
+            </div>
+            <div class="time-card reveal">
+                <div class="t-day">Friday</div>
+                <div class="t-time">7:00 PM</div>
+                <div class="t-label">Night Vigil Prayer</div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>✝ Zion Prayer Tower ATP</h2>
+                <p>Where GOD Meets His People.<br>Avinashi Town Panchayat, Tamil Nadu, India.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook">fb</a>
+                    <a href="#" title="YouTube">yt</a>
+                    <a href="#" title="Instagram">ig</a>
+                    <a href="#" title="WhatsApp">wa</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Service Times</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="prayer.html">Prayer Request</a></li>
+                    <li><a href="give.html">Give / Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Zion Prayer Tower ATP &nbsp;·&nbsp; zionprayertoweratp.org &nbsp;·&nbsp; All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

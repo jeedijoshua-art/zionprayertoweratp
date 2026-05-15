@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Give – Zion Prayer Tower ATP</title>
+    <meta name="description" content="Support the ministry of Zion Prayer Tower ATP through your generous giving via Google Pay, PhonePe, or UPI." />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <nav class="nav">
+        <a class="nav-brand" href="index.html">✝ ZION PRAYER TOWER</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="prayer.html">Prayer</a></li>
+            <li><a href="give.html" class="active">Give</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Give to God's Work</h1>
+        <p>Support the Ministry</p>
+    </div>
+
+    <!-- REPLACE YOUR_UPI_ID with your church's UPI ID -->
+    <section id="give" class="donate-section">
+        <p class="section-label reveal">Support the Ministry</p>
+        <h2 class="section-title reveal">Give to God's Work</h2>
+        <div class="section-rule reveal"><span class="section-rule-icon">🍇</span></div>
+
+        <div class="donate-body reveal">
+            <p>
+                "Each of you should give what you have decided in your heart to give, not reluctantly or under
+                compulsion, for God loves a cheerful giver." — 2 Corinthians 9:7
+            </p>
+            <div class="donate-options">
+                <a href="upi://pay?pa=YOUR_UPI_ID&pn=ZionPrayerTowerATP&cu=INR" class="donate-btn gpay">
+                    💳 Google Pay
+                </a>
+                <a href="upi://pay?pa=YOUR_UPI_ID&pn=ZionPrayerTowerATP&cu=INR" class="donate-btn phonepe">
+                    💜 PhonePe
+                </a>
+            </div>
+            <p style="font-size:0.82rem; margin-bottom:10px; color:var(--text-light);">Or scan / use UPI ID directly:</p>
+            <div class="upi-id-box">UPI: <strong>YOUR_UPI_ID@bank</strong></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>✝ Zion Prayer Tower ATP</h2>
+                <p>Where GOD Meets His People.<br>Avinashi Town Panchayat, Tamil Nadu, India.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook">fb</a>
+                    <a href="#" title="YouTube">yt</a>
+                    <a href="#" title="Instagram">ig</a>
+                    <a href="#" title="WhatsApp">wa</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Service Times</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="prayer.html">Prayer Request</a></li>
+                    <li><a href="give.html">Give / Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Zion Prayer Tower ATP &nbsp;·&nbsp; zionprayertoweratp.org &nbsp;·&nbsp; All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>

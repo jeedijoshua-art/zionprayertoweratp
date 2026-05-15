@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Zion Prayer Tower – Where GOD Meets His People</title>
+    <meta name="description" content="Zion Prayer Tower ATP – Spirit-filled church in Avinashi, Tamil Nadu." />
+
+    <!-- SEO: Open Graph -->
+    <meta property="og:title" content="Zion Prayer Tower ATP" />
+    <meta property="og:description" content="Where GOD Meets His People — Ananthapuramu, Andhra Pradesh" />
+    <!-- REPLACE: upload a photo of your church and name it og-image.jpg -->
+    <meta property="og:image" content="https://zionprayertoweratp.org/og-image.jpg" />
+    <meta property="og:url" content="https://zionprayertoweratp.org" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://zionprayertoweratp.org" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#c8a84b" />
+    <!-- font-display: swap is set via &display=swap in the URL below -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- REPLACE G-XXXXXXXXXX with your Google Analytics Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .nav-links a {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav-links a i {
+            font-size: 0.75rem;
+        }
+
+        /* ─── PRAYER FORM ──────────────────────────────── */
+        .prayer-form-wrap {
+            max-width: 560px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(200, 168, 75, 0.2);
+            border-radius: 6px;
+            padding: 32px 28px;
+        }
+
+        .pf-row {
+            margin-bottom: 18px;
+        }
+
+        .pf-row label {
+            display: block;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--grape-light);
+            margin-bottom: 6px;
+            font-weight: 600;
+        }
+
+        .pf-row input,
+        .pf-row textarea,
+        .pf-row select {
+            width: 100%;
+            padding: 11px 14px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(200, 168, 75, 0.25);
+            border-radius: 4px;
+            color: var(--parchment);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .pf-row input::placeholder,
+        .pf-row textarea::placeholder {
+            color: rgba(200, 168, 75, 0.35);
+        }
+
+        .pf-row input:focus,
+        .pf-row textarea:focus,
+        .pf-row select:focus {
+            border-color: var(--gold);
+        }
+
+        .pf-row select option {
+            background: #2d1f0e;
+            color: var(--parchment);
+        }
+
+        .pf-row textarea {
+            resize: vertical;
+            min-height: 110px;
+        }
+
+        .pf-submit {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px;
+            background: #25D366;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.15s;
+            margin-top: 6px;
+        }
+
+        .pf-submit:hover {
+            background: #1ebe5a;
+            transform: translateY(-2px);
+        }
+
+        .pf-submit i {
+            font-size: 1.1rem;
+        }
+
+        .pf-error {
+            display: none;
+            background: rgba(220, 60, 60, 0.2);
+            border: 1px solid rgba(220, 60, 60, 0.4);
+            color: #ffaaaa;
+            padding: 10px 14px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-bottom: 14px;
+        }
+
+        .pf-error.show {
+            display: block;
+        }
+
+        @media(max-width:480px) {
+            .prayer-form-wrap {
+                padding: 22px 16px;
+            }
+        }
+
+        /* ─── WHATSAPP FLOATING BUTTON ──────────────────── */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 150;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #25D366;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0,0,0,0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .wa-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6), 0 4px 12px rgba(0,0,0,0.25);
+        }
+
+        .wa-float .wa-tooltip {
+            position: absolute;
+            right: calc(100% + 10px);
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(30, 20, 10, 0.92);
+            color: #fff;
+            font-size: 0.78rem;
+            font-family: 'Crimson Pro', Georgia, serif;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+            padding: 6px 12px;
+            border-radius: 4px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .wa-float .wa-tooltip::after {
+            content: '';
+            position: absolute;
+            left: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 5px solid transparent;
+            border-left-color: rgba(30, 20, 10, 0.92);
+        }
+
+        .wa-float:hover .wa-tooltip {
+            opacity: 1;
+        }
+
+        @media (max-width: 480px) {
+            .wa-float {
+                bottom: 16px;
+                right: 16px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.4rem;
+            }
+        }
+        @media (max-width: 400px) {
+            .nav-links a {
+                font-size: 0.72rem;
+                letter-spacing: 0.5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Gold scroll-progress bar (z-index 200, above nav) -->
+    <div id="scroll-progress"></div>
+
+    <!-- ══ ANNOUNCEMENT BANNER ═════════════════════════════ -->
+    <div id="announcement-banner" class="ann-banner" role="alert" aria-live="polite">
+        <div class="ann-content">
+            <span class="ann-dot"></span>
+            <!-- REPLACE: Update announcement text here -->
+            <span class="ann-text">🙏 Special Prayer Night — This Friday 7:00 PM. All are welcome.</span>
+        </div>
+        <button class="ann-dismiss" aria-label="Dismiss announcement" onclick="dismissBanner()">&#x00D7;</button>
+    </div>
+
+    <nav class="nav">
+        <a class="nav-brand" href="#home" onclick="go('home')" aria-label="Go to home page">✝ ZION PRAYER TOWER</a>
+        <button class="nav-toggle"
+            onclick="document.querySelector('.nav-links').classList.toggle('open'); this.setAttribute('aria-expanded', this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true')"
+            aria-label="Menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" aria-label="Main navigation">
+            <li><a href="#about" onclick="go('about')"> <i class="fa-solid fa-leaf"></i> About</a></li>
+            <li><a href="#services" onclick="go('services')"><i class="fa-solid fa-clock"></i> Services</a></li>
+            <li><a href="#sermons" onclick="go('sermons')"> <i class="fa-solid fa-book-open"></i> Sermons</a></li>
+            <li><a href="#events" onclick="go('events')"> <i class="fa-solid fa-calendar-days"></i> Events</a></li>
+            <li><a href="#pastor" onclick="go('pastor')"> <i class="fa-solid fa-person-praying"></i> Pastor</a></li>
+            <li><a href="#gallery" onclick="go('gallery')"> <i class="fa-solid fa-images"></i> Gallery</a></li>
+            <li><a href="#testimonies" onclick="go('testimonies')"> <i class="fa-solid fa-quote-left"></i> Testimonies</a></li>
+            <li><a href="#prayer" onclick="go('prayer')"> <i class="fa-solid fa-hands-praying"></i> Prayer</a></li>
+            <li><a href="#give" onclick="go('give')"> <i class="fa-solid fa-heart"></i> Give</a></li>
+            <li><a href="#contact" onclick="go('contact')"> <i class="fa-solid fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ══ HOME ══════════════════════════════════════════ -->
+    <div id="page-home" class="page active">
+        <section class="hero">
+            <div class="hero-particles" id="particles"></div>
+            <div class="hero-cross">✝</div>
+            <h1>ZION PRAYER TOWER<em>Where GOD Meets His People</em></h1>
+            <p class="hero-sub">Ananthapuramu &nbsp;·&nbsp; Andhra Pradesh, India</p>
+            <blockquote class="hero-verse">
+                "I am the vine; you are the branches. Whoever abides in me and I in him, he it is that bears much
+                fruit."
+                <br><cite>— John 15:5</cite>
+            </blockquote>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="go('services')">Join Us This Sunday</button>
+                <button class="btn-ghost" onclick="go('prayer')">Submit a Prayer Request</button>
+            </div>
+            <span class="hero-scroll">Scroll</span>
+        </section>
+
+        <section class="alt" style="padding:56px 5vw;">
+            <p class="section-label reveal">Explore Our Church</p>
+            <h2 class="section-title reveal">Everything You Need</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon">✝</span></div>
+            <div class="pillars-grid" style="max-width:1000px;">
+                <div class="pillar reveal" onclick="go('about')" style="cursor:pointer;">
+                    <div class="pillar-icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>About Us</h3>
+                    <p>Our story, mission, and what we believe as a Spirit-filled church.</p>
+                </div>
+                <div class="pillar reveal" onclick="go('services')" style="cursor:pointer;">
+                    <div class="pillar-icon"><i class="fa-solid fa-clock"></i></div>
+                    <h3>Service Times</h3>
+                    <p>Sunday worship, Wednesday Bible Study, Friday Night Vigil.</p>
+                </div>
+                <div class="pillar reveal" onclick="go('sermons')" style="cursor:pointer;">
+                    <div class="pillar-icon"><i class="fa-solid fa-book-open"></i></div>
+                    <h3>Sermons</h3>
+                    <p>Watch recent messages and be fed by the Word of God.</p>
+                </div>
+                <div class="pillar reveal" onclick="go('events')" style="cursor:pointer;">
+                    <div class="pillar-icon"><i class="fa-solid fa-calendar-days"></i></div>
+                    <h3>Events</h3>
+                    <p>Camps, outreach, prayer nights, and more coming up.</p>
+                </div>
+                <div class="pillar reveal" onclick="go('prayer')" style="cursor:pointer;">
+                    <div class="pillar-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                    <h3>Prayer Requests</h3>
+                    <p>Submit your need and let the body of Christ stand with you.</p>
+                </div>
+                <div class="pillar reveal" onclick="go('give')" style="cursor:pointer;">
+                    <div class="pillar-icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Give</h3>
+                    <p>Partner with God's work here in Avinashi through your giving.</p>
+                </div>
+                <div class="pillar reveal" onclick="go('contact')" style="cursor:pointer;">
+                    <div class="pillar-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h3>Contact Us</h3>
+                    <p>We'd love to hear from you and help you find your place here.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ ABOUT ══════════════════════════════════════════ -->
+    <div id="page-about" class="page">
+        <div class="page-hero">
+            <h1>About Us</h1>
+            <p>Our Story &nbsp;·&nbsp; What We Believe</p>
+        </div>
+        <section class="alt">
+            <p class="section-label reveal">Our Story</p>
+            <h2 class="section-title reveal">Rooted in the True Vine</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon">🍇</span></div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>Zion Prayer Tower ATP is a Spirit-filled, community-rooted church in Avinashi, Tamil Nadu. We are
+                        a people grafted into the True Vine — Jesus Christ — drawing life, strength, and purpose from
+                        Him alone.</p>
+                    <p>Just as the Gardener tends the vineyard with care, pruning what is unfruitful and binding the
+                        broken branches, God has been faithfully at work in this congregation — restoring, renewing, and
+                        reviving hearts.</p>
+                    <p>Every person who walks through our doors is welcomed — the weary, the broken, the seeker, and the
+                        faithful. You have a home here.</p>
+                </div>
+                <div class="vine-box reveal">
+                    <blockquote>"Every branch in me that does not bear fruit He takes away, and every branch that does
+                        bear fruit He prunes, that it may bear more fruit."</blockquote>
+                    <cite>— John 15:2 (ESV)</cite>
+                </div>
+            </div>
+        </section>
+        <section>
+            <p class="section-label reveal">What We Believe</p>
+            <h2 class="section-title reveal">The Branches We Stand On</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon">✝</span></div>
+            <div class="pillars-grid">
+                <div class="pillar reveal">
+                    <div class="pillar-icon"><i class="fa-solid fa-bible"></i></div>
+                    <h3>The Word</h3>
+                    <p>We stand on the Holy Bible as the inspired, inerrant Word of God — the foundation of all we
+                        believe.</p>
+                </div>
+                <div class="pillar reveal">
+                    <div class="pillar-icon"><i class="fa-solid fa-hands-praying"></i></div>
+                    <h3>Prayer</h3>
+                    <p>Prayer is the lifeblood of this church. We are a house of prayer — interceding for our city and
+                        the nations.</p>
+                </div>
+                <div class="pillar reveal">
+                    <div class="pillar-icon"><i class="fa-solid fa-dove"></i></div>
+                    <h3>The Holy Spirit</h3>
+                    <p>We believe in the present-day work of the Holy Spirit — His gifts, power, and transforming
+                        presence.</p>
+                </div>
+                <div class="pillar reveal">
+                    <div class="pillar-icon"><i class="fa-solid fa-people-group"></i></div>
+                    <h3>Community</h3>
+                    <p>We are a family. We bear one another's burdens and grow together as one body in Christ.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ SERVICES ════════════════════════════════════════ -->
+    <div id="page-services" class="page">
+        <div class="page-hero">
+            <h1>Service Times</h1>
+            <p>Gather With Us</p>
+        </div>
+        <section class="dark">
+            <p class="section-label reveal">Gather With Us</p>
+            <h2 class="section-title reveal">Service Times</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i class="fa-solid fa-clock"></i></span>
+            </div>
+            <div class="times-grid">
+                <div class="time-card reveal">
+                    <div class="t-day">Sunday</div>
+                    <div class="t-time">7:00 AM</div>
+                    <div class="t-label">Morning Prayer</div>
+                </div>
+                <div class="time-card reveal">
+                    <div class="t-day">Sunday</div>
+                    <div class="t-time">10:00 AM</div>
+                    <div class="t-label">Main Worship Service</div>
+                </div>
+                <div class="time-card reveal">
+                    <div class="t-day">Wednesday</div>
+                    <div class="t-time">6:30 PM</div>
+                    <div class="t-label">Bible Study</div>
+                </div>
+                <div class="time-card reveal">
+                    <div class="t-day">Friday</div>
+                    <div class="t-time">7:00 PM</div>
+                    <div class="t-label">Night Vigil Prayer</div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ SERMONS ═════════════════════════════════════════ -->
+    <div id="page-sermons" class="page">
+        <div class="page-hero">
+            <h1>Sermons</h1>
+            <p>The Word Preached</p>
+        </div>
+        <section class="alt">
+            <p class="section-label reveal">The Word Preached</p>
+            <h2 class="section-title reveal">Recent Sermons</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i
+                        class="fa-solid fa-book-open"></i></span></div>
+            <div class="sermons-grid">
+                <div class="sermon-card reveal">
+                    <div class="yt-wrap">
+                        <!-- REPLACE VIDEO_ID_1: Go to your YouTube video → copy the ID after v= in the URL -->
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" title="Sermon 1"
+                            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="sermon-info">
+                        <div class="sermon-title">Abiding in the Vine</div>
+                        <!-- REPLACE [NAME] with your pastor's actual name -->
+                        <div class="sermon-meta">Pastor [NAME] &nbsp;·&nbsp; April 2026</div>
+                    </div>
+                </div>
+                <div class="sermon-card reveal">
+                    <div class="yt-wrap">
+                        <!-- REPLACE VIDEO_ID_2: Go to your YouTube video → copy the ID after v= in the URL -->
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" title="Sermon 2"
+                            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="sermon-info">
+                        <div class="sermon-title">The Gardener's Promise</div>
+                        <!-- REPLACE [NAME] with your pastor's actual name -->
+                        <div class="sermon-meta">Pastor [NAME] &nbsp;·&nbsp; April 2026</div>
+                    </div>
+                </div>
+                <div class="sermon-card reveal">
+                    <div class="yt-wrap">
+                        <!-- REPLACE VIDEO_ID_3: Go to your YouTube video → copy the ID after v= in the URL -->
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" title="Sermon 3"
+                            allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+                            allowfullscreen loading="lazy"></iframe>
+                    </div>
+                    <div class="sermon-info">
+                        <div class="sermon-title">Bearing Much Fruit</div>
+                        <!-- REPLACE [NAME] with your pastor's actual name -->
+                        <div class="sermon-meta">Pastor [NAME] &nbsp;·&nbsp; March 2026</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ EVENTS ══════════════════════════════════════════ -->
+    <div id="page-events" class="page">
+        <div class="page-hero">
+            <h1>Upcoming Events</h1>
+            <p>What's Coming</p>
+        </div>
+        <section>
+            <p class="section-label reveal">What's Coming</p>
+            <h2 class="section-title reveal">Upcoming Events</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i
+                        class="fa-solid fa-calendar-days"></i></span></div>
+            <div class="events-layout">
+                <div class="events-list reveal">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="eday">4</div>
+                            <div class="emon">May</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="etitle">Sunday School Anniversary</div>
+                            <div class="edesc">Annual celebration for our children's ministry</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="eday">11</div>
+                            <div class="emon">May</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="etitle">All-Night Prayer Meeting</div>
+                            <div class="edesc">Corporate intercession — all are welcome</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="eday">25</div>
+                            <div class="emon">May</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="etitle">Youth Camp 2026</div>
+                            <div class="edesc">2-day retreat for young adults and teens</div>
+                        </div>
+                    </div>
+                    <div class="event-item">
+                        <div class="event-date">
+                            <div class="eday">1</div>
+                            <div class="emon">Jun</div>
+                        </div>
+                        <div class="event-info">
+                            <div class="etitle">Community Outreach</div>
+                            <div class="edesc">Serving families in Avinashi — volunteers welcome</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="gcal-wrap reveal">
+                    <!-- REPLACE YOUR_CALENDAR_ID: Google Calendar → Settings → Integrate Calendar → copy Embed URL -->
+                    <iframe id="gcal-embed"
+                        src="https://calendar.google.com/calendar/embed?src=YOUR_CALENDAR_ID%40group.calendar.google.com&ctz=Asia%2FKolkata&showTitle=0&showNav=1&showPrint=0&showTabs=0&showCalendars=0&mode=MONTH"
+                        title="Church Calendar"></iframe>
+                    <p class="gcal-note"><i class="fa-solid fa-calendar-days"></i> Live calendar — updated by church
+                        administration</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ PRAYER ══════════════════════════════════════════ -->
+    <div id="page-prayer" class="page">
+        <div class="page-hero">
+            <h1>Prayer Requests</h1>
+            <p>We Intercede Together</p>
+        </div>
+        <section class="dark prayer-section">
+            <p class="section-label reveal">We Intercede Together</p>
+            <h2 class="section-title reveal">Submit a Prayer Request</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i
+                        class="fa-solid fa-hands-praying"></i></span></div>
+            <p class="reveal"
+                style="text-align:center;color:var(--parchment);opacity:0.8;max-width:540px;margin:0 auto 28px;font-size:1.05rem;">
+                No burden is too small and no prayer too big. Our intercessory team prays over every request. Fill the
+                form below — it will open WhatsApp with your message ready to send.
+            </p>
+
+            <div class="prayer-form-wrap reveal">
+                <!-- Validation error box -->
+                <div class="pf-error" id="pf-error"><i class="fa-solid fa-circle-exclamation"></i> <span
+                        id="pf-error-msg"></span></div>
+
+                <form id="prayer-form" novalidate>
+                    <!-- Name -->
+                    <div class="pf-row">
+                        <label for="pf-name"><i class="fa-solid fa-user"></i> &nbsp;Your Name</label>
+                        <input type="text" id="pf-name" placeholder="e.g. Samuel Paul" autocomplete="name" />
+                    </div>
+
+                    <!-- Category -->
+                    <div class="pf-row">
+                        <label for="pf-category"><i class="fa-solid fa-tag"></i> &nbsp;Category</label>
+                        <select id="pf-category">
+                            <option value="General">🙏 General</option>
+                            <option value="Healing">💊 Healing</option>
+                            <option value="Family">👨‍👩‍👧 Family</option>
+                            <option value="Financial">💰 Financial</option>
+                        </select>
+                    </div>
+
+                    <!-- Prayer Request -->
+                    <div class="pf-row">
+                        <label for="pf-message"><i class="fa-solid fa-pen-nib"></i> &nbsp;Your Prayer Request</label>
+                        <textarea id="pf-message" placeholder="Share your prayer need here..."></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="pf-submit"
+                        onclick="gtag('event', 'whatsapp_click', { location: 'prayer_section' })">
+                        <i class="fa-brands fa-whatsapp"></i> Send Prayer Request on WhatsApp
+                    </button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ GIVE ════════════════════════════════════════════ -->
+    <div id="page-give" class="page">
+        <div class="page-hero">
+            <h1>Give to God's Work</h1>
+            <p>Support the Ministry</p>
+        </div>
+        <section class="donate-section">
+            <p class="section-label reveal">Support the Ministry</p>
+            <h2 class="section-title reveal">Give to God's Work</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i class="fa-solid fa-heart"></i></span>
+            </div>
+            <div class="donate-body reveal">
+                <p>"Each of you should give what you have decided in your heart to give, not reluctantly or under
+                    compulsion, for God loves a cheerful giver." — 2 Corinthians 9:7</p>
+                <!-- REPLACE YOUR_UPI_ID: Use your church bank's UPI ID e.g. churchname@upi -->
+                <div class="donate-options">
+                    <a href="upi://pay?pa=YOUR_UPI_ID&pn=ZionPrayerTowerATP&cu=INR" class="donate-btn gpay"
+                        onclick="gtag('event', 'donate_click', { method: 'gpay' })"><i
+                            class="fa-brands fa-google-pay"></i> Google Pay</a>
+                    <a href="upi://pay?pa=YOUR_UPI_ID&pn=ZionPrayerTowerATP&cu=INR" class="donate-btn phonepe"
+                        onclick="gtag('event', 'donate_click', { method: 'phonepe' })"><i
+                            class="fa-solid fa-mobile-screen-button"></i> PhonePe</a>
+                </div>
+                <p style="font-size:0.82rem;margin-bottom:10px;color:var(--text-light);">Or use UPI ID directly:</p>
+                <div class="upi-id-box">UPI: <strong>YOUR_UPI_ID@bank</strong></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ CONTACT ═════════════════════════════════════════ -->
+    <div id="page-contact" class="page">
+        <div class="page-hero">
+            <h1>Contact Us</h1>
+            <p>Reach Out</p>
+        </div>
+        <section class="alt">
+            <p class="section-label reveal">Reach Out</p>
+            <h2 class="section-title reveal">Contact Us</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i class="fa-solid fa-envelope"></i></span>
+            </div>
+            <div class="contact-layout">
+                <div class="contact-info reveal">
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="c-label">Address</div>
+                            <div class="c-val">Zion Prayer Tower, Ananthapuramu,<br>Andhra Pradesh – 515 001</div>
+                        </div>
+                    </div>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div class="c-label">Phone</div>
+                            <!-- REPLACE: Add your actual church phone number here -->
+                            <div class="c-val">+91 XXXXX XXXXX</div>
+                        </div>
+                    </div>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div class="c-label">Email</div>
+                            <div class="c-val">info@zionprayertoweratp.org</div>
+                        </div>
+                    </div>
+                    <div class="c-row">
+                        <div class="c-icon"><i class="fa-solid fa-clock"></i></div>
+                        <div>
+                            <div class="c-label">Office Hours</div>
+                            <div class="c-val">Mon – Sat: 9:00 AM – 5:00 PM</div>
+                        </div>
+                    </div>
+                    <!-- REPLACE YOUR_MAPS_EMBED_URL: Go to maps.google.com → search your church address → Share → Embed a map → copy the src URL -->
+                    <iframe src="https://www.google.com/maps/embed?pb=YOUR_MAPS_EMBED_URL" width="100%" height="180"
+                        style="border:0;border-radius:4px;margin-top:8px;" allowfullscreen loading="lazy"
+                        title="Church Location"></iframe>
+                </div>
+                <div class="contact-form reveal">
+                    <h3>Send Us a Message</h3>
+                    <!-- REPLACE YOUR_FORM_ID: Sign up at formspree.io → Create Form → copy the ID -->
+                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="form-row"><label for="cf-name">Your Name</label><input type="text" id="cf-name"
+                                name="name" placeholder="e.g. Samuel Paul" required /></div>
+                        <div class="form-row"><label for="cf-email">Email Address</label><input type="email"
+                                id="cf-email" name="email" placeholder="you@example.com" required /></div>
+                        <div class="form-row"><label for="cf-phone">Phone (optional)</label><input type="tel"
+                                id="cf-phone" name="phone" placeholder="+91 XXXXX XXXXX" /></div>
+                        <div class="form-row"><label for="cf-msg">Message</label><textarea id="cf-msg" name="message"
+                                placeholder="How can we help you?" required></textarea></div>
+                        <button type="submit" class="form-submit"><i class="fa-solid fa-paper-plane"></i> Send
+                            Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ PASTOR ════════════════════════════════════════ -->
+    <div id="page-pastor" class="page">
+        <div class="page-hero">
+            <h1>Our Pastor</h1>
+            <p>The Shepherd God Placed Here</p>
+        </div>
+
+        <section>
+            <div class="pastor-grid reveal">
+                <!-- Left: Photo -->
+                <div class="pastor-photo-col">
+                    <div class="pastor-photo-placeholder">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <p class="pastor-name">Pastor [NAME]</p>
+                    <p class="pastor-designation">Senior Pastor</p>
+                </div>
+                <!-- Right: Bio -->
+                <div class="pastor-bio-col">
+                    <p class="section-label">Called to Serve</p>
+                    <h2 class="section-title">Pastor [NAME]</h2>
+                    <div class="section-rule"><span class="section-rule-icon">✝</span></div>
+                    <!-- REPLACE: Add actual pastor bio paragraphs here -->
+                    <p>From the very first calling upon his heart, Pastor [NAME] has known that God's purpose for his life was rooted in intercession and service. Raised in a Spirit-filled household, he surrendered his life to full-time ministry after a powerful encounter with the Holy Spirit as a young man.</p>
+                    <p>For over two decades, Pastor [NAME] has served the people of Ananthapuramu with deep pastoral care, unwavering faith, and a heart for the lost and the broken. His ministry is built on three pillars — prayer, the Word of God, and love for the congregation.</p>
+                    <p>Under his leadership, Zion Prayer Tower ATP has grown from a small gathering of believers into a vibrant, Spirit-led community. He believes the church exists to be a place where God truly meets His people — in worship, in prayer, and in everyday life.</p>
+                    <div class="vine-box" style="margin-top:28px;">
+                        <blockquote>"Keep watch over yourselves and all the flock of which the Holy Spirit has made you overseers."</blockquote>
+                        <cite>— Acts 20:28</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="alt">
+            <p class="section-label reveal">Serving Together</p>
+            <h2 class="section-title reveal">Our Leadership Team</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon">✝</span></div>
+            <div class="leadership-grid">
+                <!-- REPLACE: Add actual leader names and photos -->
+                <div class="leader-card pillar reveal">
+                    <div class="leader-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h3>[Elder Name]</h3>
+                    <p class="leader-role">Elder</p>
+                </div>
+                <div class="leader-card pillar reveal">
+                    <div class="leader-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h3>[Leader Name]</h3>
+                    <p class="leader-role">Worship Leader</p>
+                </div>
+                <div class="leader-card pillar reveal">
+                    <div class="leader-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h3>[Leader Name]</h3>
+                    <p class="leader-role">Youth Pastor</p>
+                </div>
+                <div class="leader-card pillar reveal">
+                    <div class="leader-avatar"><i class="fa-solid fa-user"></i></div>
+                    <h3>[Leader Name]</h3>
+                    <p class="leader-role">Women's Ministry</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ GALLERY ═══════════════════════════════════════ -->
+    <div id="page-gallery" class="page">
+        <div class="page-hero">
+            <h1>Gallery</h1>
+            <p>Moments of Grace</p>
+        </div>
+
+        <section>
+            <p class="section-label reveal">Life at Zion</p>
+            <h2 class="section-title reveal">Our Congregation</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i class="fa-solid fa-camera"></i></span></div>
+
+            <div class="gallery-masonry">
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-square">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--grape-deep),var(--leaf-dark));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-church"></i><span>Sunday Worship</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-landscape">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--leaf-dark),var(--vine));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-hands-praying"></i><span>Prayer Meeting</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-portrait">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--vine),var(--grape-deep));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-music"></i><span>Youth Group</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-square">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--grape-deep),var(--bark));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-people-group"></i><span>Baptism</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-landscape">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--leaf-dark),var(--grape-deep));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-dove"></i><span>Outreach</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-portrait">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--vine),var(--leaf-dark));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-cross"></i><span>Bible Study</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-square">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--bark),var(--grape-deep));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-book-bible"></i><span>Easter Service</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-landscape">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--grape-deep),var(--vine));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-star"></i><span>Women's Fellowship</span></div>
+                </div>
+                <!-- REPLACE: swap this div with an <img> tag when you have real photos -->
+                <div class="gallery-item gi-square">
+                    <div class="gi-bg" style="background:linear-gradient(135deg,var(--leaf-dark),var(--bark));"></div>
+                    <div class="gi-overlay"><i class="fa-solid fa-heart"></i><span>Children's Ministry</span></div>
+                </div>
+            </div>
+
+            <div class="gallery-cta reveal">
+                <p>Have photos from church events? Send them to us!</p>
+                <a href="https://wa.me/919866766434?text=Church%20Photo%20Submission"
+                    target="_blank" rel="noopener noreferrer"
+                    class="prayer-btn wa">
+                    <i class="fa-brands fa-whatsapp"></i> Send Photos on WhatsApp
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ TESTIMONIES ════════════════════════════════════ -->
+    <div id="page-testimonies" class="page">
+        <div class="page-hero">
+            <h1>Testimonies</h1>
+            <p>What God Has Done</p>
+        </div>
+
+        <section class="dark">
+            <p class="section-label reveal">His Faithfulness</p>
+            <h2 class="section-title reveal">Stories of Grace</h2>
+            <div class="section-rule reveal"><span class="section-rule-icon"><i class="fa-solid fa-dove"></i></span></div>
+
+            <p class="testimonies-intro reveal">Our congregation speaks Telugu. Share your testimony as a voice note or message directly on WhatsApp — in your own words, in your own language. Every testimony is a declaration of God's glory.</p>
+
+            <div class="testimony-cta-box vine-box reveal" style="max-width:560px;margin:40px auto 48px;text-align:center;">
+                <h3 class="testimony-cta-heading">Share Your Testimony</h3>
+                <p class="testimony-cta-sub">Speak in Telugu or English — send a voice note or text on WhatsApp</p>
+                <a href="https://wa.me/919866766434?text=Testimony%3A%20"
+                    target="_blank" rel="noopener noreferrer"
+                    class="pf-submit" style="display:inline-flex;max-width:360px;margin:16px auto 0;text-decoration:none;">
+                    <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+                </a>
+                <p class="testimony-cta-note">Your testimony will be prayed over and may be shared with the congregation with your permission.</p>
+            </div>
+
+            <div class="testimonies-grid">
+                <!-- REPLACE: Add real testimony text and name when available -->
+                <div class="testimony-card reveal" style="animation-delay:0ms;">
+                    <i class="fa-solid fa-quote-left testimony-quote-icon"></i>
+                    <p class="testimony-text"><em>"God answered our prayers in a way we never expected. Our family was going through a very difficult time, but the prayers of this church community carried us through. To God be all the glory."</em></p>
+                    <div class="testimony-author">
+                        <div class="testimony-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <strong>[Name]</strong>
+                            <span class="testimony-location">Ananthapuramu</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- REPLACE: Add real testimony text and name when available -->
+                <div class="testimony-card reveal" style="animation-delay:150ms;">
+                    <i class="fa-solid fa-quote-left testimony-quote-icon"></i>
+                    <p class="testimony-text"><em>"I was healed after the elders anointed me and prayed. The doctors were surprised. But we know — it was the Lord's doing. Praise God!"</em></p>
+                    <div class="testimony-author">
+                        <div class="testimony-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <strong>[Name]</strong>
+                            <span class="testimony-location">Ananthapuramu</span>
+                        </div>
+                    </div>
+                </div>
+                <!-- REPLACE: Add real testimony text and name when available -->
+                <div class="testimony-card reveal" style="animation-delay:300ms;">
+                    <i class="fa-solid fa-quote-left testimony-quote-icon"></i>
+                    <p class="testimony-text"><em>"Zion Prayer Tower is where I found my faith. The Word preached here changed my life completely. I am forever grateful to this congregation and our pastor."</em></p>
+                    <div class="testimony-author">
+                        <div class="testimony-avatar"><i class="fa-solid fa-user"></i></div>
+                        <div>
+                            <strong>[Name]</strong>
+                            <span class="testimony-location">Ananthapuramu</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ══ FOOTER (shared) ════════════════════════════════ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>✝ Zion Prayer Tower ATP</h2>
+                <p>Where GOD Meets His People.<br>Avinashi Town Panchayat, Tamil Nadu, India.</p>
+                <div class="footer-social">
+                    <!-- REPLACE: Add your actual Facebook URL here -->
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <!-- REPLACE: Add your actual YouTube URL here -->
+                    <a href="#" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <!-- REPLACE: Add your actual Instagram URL here -->
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <!-- REPLACE: Add your actual WhatsApp URL here -->
+                    <a href="#" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about" onclick="go('about')">About</a></li>
+                    <li><a href="#services" onclick="go('services')">Service Times</a></li>
+                    <li><a href="#sermons" onclick="go('sermons')">Sermons</a></li>
+                    <li><a href="#events" onclick="go('events')">Events</a></li>
+                    <li><a href="#pastor" onclick="go('pastor')">Our Pastor</a></li>
+                    <li><a href="#gallery" onclick="go('gallery')">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="#prayer" onclick="go('prayer')">Prayer Request</a></li>
+                    <li><a href="#give" onclick="go('give')">Give / Donate</a></li>
+                    <li><a href="#testimonies" onclick="go('testimonies')">Testimonies</a></li>
+                    <li><a href="#contact" onclick="go('contact')">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">© 2026 Zion Prayer Tower ATP &nbsp;·&nbsp; zionprayertoweratp.org &nbsp;·&nbsp; All
+            rights reserved.</div>
+    </footer>
+
+    <script>
+        // ══════════════════════════════════════════════════
+        // ANNOUNCEMENT BANNER
+        // ══════════════════════════════════════════════════
+        (function initBanner() {
+            const banner = document.getElementById('announcement-banner');
+            const nav = document.querySelector('.nav');
+            if (!banner) return;
+            if (localStorage.getItem('zpt_banner_dismissed') === '1') {
+                banner.style.display = 'none';
+            } else {
+                nav.classList.add('banner-visible');
+            }
+        })();
+
+        function dismissBanner() {
+            const banner = document.getElementById('announcement-banner');
+            const nav = document.querySelector('.nav');
+            if (!banner) return;
+            banner.classList.add('ann-dismissed');
+            nav.classList.remove('banner-visible');
+            setTimeout(() => { banner.style.display = 'none'; }, 320);
+            localStorage.setItem('zpt_banner_dismissed', '1');
+        }
+
+        // ══════════════════════════════════════════════════
+        // SCROLL PROGRESS BAR
+        // ══════════════════════════════════════════════════
+        const progressBar = document.getElementById('scroll-progress');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            progressBar.style.width = (total > 0 ? (scrolled / total) * 100 : 0) + '%';
+        }, { passive: true });
+
+        // ══════════════════════════════════════════════════
+        // SPA ROUTER — with fade transitions
+        // ══════════════════════════════════════════════════
+        function go(page) {
+            const current = document.querySelector('.page.active');
+            const next = document.getElementById('page-' + page);
+            if (!next || (current && current === next)) return;
+
+            // Update nav active state immediately
+            document.querySelectorAll('.nav-links a').forEach(a => {
+                a.classList.toggle('active', a.getAttribute('href') === '#' + page);
+            });
+            document.querySelector('.nav-links').classList.remove('open');
+            const toggle = document.querySelector('.nav-toggle');
+            if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            history.pushState(null, '', '#' + page);
+
+            if (current && current !== next) {
+                // Fade out current
+                current.classList.add('fade-out');
+                setTimeout(() => {
+                    current.classList.remove('active', 'fade-out');
+                    // Show and fade in next
+                    next.classList.add('active', 'fade-in');
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                    setTimeout(() => next.classList.remove('fade-in'), 350);
+                    initReveal();
+                    initStaggerAnimations();
+                }, 210);
+            } else {
+                document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+                next.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'instant' });
+                initReveal();
+                initStaggerAnimations();
+            }
+        }
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', () => {
+            const hash = location.hash.replace('#', '') || 'home';
+            go(hash);
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('.nav');
+            const links = document.querySelector('.nav-links');
+            if (links && links.classList.contains('open') && !nav.contains(e.target)) {
+                links.classList.remove('open');
+                const toggle = document.querySelector('.nav-toggle');
+                if (toggle) toggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // ══════════════════════════════════════════════════
+        // SCROLL REVEAL — directional (odd=left, even=right)
+        // ══════════════════════════════════════════════════
+        function initReveal() {
+            const revealEls = document.querySelectorAll('.reveal:not(.visible)');
+            revealEls.forEach((el, i) => {
+                el.classList.remove('from-left', 'from-right');
+                el.classList.add(i % 2 === 0 ? 'from-left' : 'from-right');
+            });
+            const obs = new IntersectionObserver((entries) => {
+                entries.forEach(e => {
+                    if (e.isIntersecting) {
+                        e.target.classList.add('visible');
+                        obs.unobserve(e.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(el => obs.observe(el));
+
+            // Section titles slide-in observer
+            document.querySelectorAll('.section-title:not(.visible)').forEach(el => {
+                const titleObs = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        el.classList.add('visible');
+                        titleObs.disconnect();
+                    }
+                }, { threshold: 0.2 });
+                titleObs.observe(el);
+            });
+        }
+
+        // ══════════════════════════════════════════════════
+        // STAGGER ANIMATIONS (pillars, events)
+        // ══════════════════════════════════════════════════
+        function initStaggerAnimations() {
+            // Pillar cards stagger
+            document.querySelectorAll('.pillar:not(.visible)').forEach((card, i) => {
+                card.style.transitionDelay = (i * 120) + 'ms';
+                const obs = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        card.classList.add('visible');
+                        obs.disconnect();
+                    }
+                }, { threshold: 0.1 });
+                obs.observe(card);
+            });
+
+            // Event items stagger
+            document.querySelectorAll('.event-item:not(.visible)').forEach((item, i) => {
+                item.style.transitionDelay = (i * 100) + 'ms';
+                const obs = new IntersectionObserver(([entry]) => {
+                    if (entry.isIntersecting) {
+                        item.classList.add('visible');
+                        obs.disconnect();
+                    }
+                }, { threshold: 0.1 });
+                obs.observe(item);
+            });
+        }
+
+        // ══════════════════════════════════════════════════
+        // HERO H1 — word-by-word stagger
+        // ══════════════════════════════════════════════════
+        (function splitHeroH1() {
+            const h1 = document.querySelector('.hero h1');
+            if (!h1) return;
+            const em = h1.querySelector('em');
+            const rawText = h1.childNodes[0];
+            if (!rawText || rawText.nodeType !== Node.TEXT_NODE) return;
+            const words = rawText.textContent.trim().split(/\s+/);
+            rawText.remove();
+            const frag = document.createDocumentFragment();
+            words.forEach((word, i) => {
+                const span = document.createElement('span');
+                span.classList.add('hero-word');
+                span.textContent = word + '\u00A0';
+                span.style.animationDelay = (i * 100) + 'ms';
+                frag.appendChild(span);
+            });
+            h1.insertBefore(frag, em);
+        })();
+
+        // ══════════════════════════════════════════════════
+        // HERO VERSE — typewriter effect
+        // ══════════════════════════════════════════════════
+        (function typewriterVerse() {
+            const bq = document.querySelector('.hero-verse');
+            if (!bq) return;
+            const cite = bq.querySelector('cite');
+            // Grab full text (first text node)
+            let fullText = '';
+            bq.childNodes.forEach(n => {
+                if (n.nodeType === Node.TEXT_NODE) fullText += n.textContent;
+            });
+            fullText = fullText.trim();
+            // Clear existing text nodes
+            [...bq.childNodes].forEach(n => { if (n.nodeType === Node.TEXT_NODE) n.remove(); });
+
+            // Insert text span and cursor
+            const textSpan = document.createElement('span');
+            const cursor = document.createElement('span');
+            cursor.className = 'tw-cursor';
+            bq.insertBefore(textSpan, cite);
+            bq.insertBefore(cursor, cite);
+
+            let idx = 0;
+            function type() {
+                if (idx <= fullText.length) {
+                    textSpan.textContent = fullText.slice(0, idx);
+                    idx++;
+                    setTimeout(type, 28);
+                } else {
+                    // Done — remove cursor after 2s
+                    setTimeout(() => cursor.remove(), 2000);
+                }
+            }
+            setTimeout(type, 1200);
+        })();
+
+        // ══════════════════════════════════════════════════
+        // LEAF PARTICLES — wrapped in rAF for smoother paint
+        // ══════════════════════════════════════════════════
+        requestAnimationFrame(() => {
+            const container = document.getElementById('particles');
+            const colors = ['#3a6b30', '#6b3a7d', '#c8a84b', '#a8c89a', '#c09ed4'];
+            for (let i = 0; i < 18; i++) {
+                const leaf = document.createElement('div');
+                leaf.classList.add('leaf-p');
+                leaf.style.cssText = `left:${Math.random() * 100}%;background:${colors[Math.floor(Math.random() * colors.length)]};width:${6 + Math.random() * 8}px;height:${9 + Math.random() * 10}px;animation-duration:${8 + Math.random() * 14}s;animation-delay:${Math.random() * 12}s;`;
+                container.appendChild(leaf);
+            }
+        });
+
+        // ══════════════════════════════════════════════════
+        // BUTTON RIPPLE EFFECT
+        // ══════════════════════════════════════════════════
+        document.querySelectorAll('.btn-primary, .btn-ghost').forEach(btn => {
+            btn.addEventListener('click', function (e) {
+                const rect = this.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                const ripple = document.createElement('span');
+                ripple.className = 'btn-ripple';
+                ripple.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
+                this.appendChild(ripple);
+                setTimeout(() => ripple.remove(), 600);
+            });
+        });
+
+        // ══════════════════════════════════════════════════
+        // INITIAL PAGE LOAD
+        // ══════════════════════════════════════════════════
+        const initPage = location.hash.replace('#', '') || 'home';
+        // Direct show without transition on first load
+        document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+        const startPage = document.getElementById('page-' + initPage);
+        if (startPage) startPage.classList.add('active');
+        history.replaceState(null, '', '#' + initPage);
+        document.querySelectorAll('.nav-links a').forEach(a => {
+            a.classList.toggle('active', a.getAttribute('href') === '#' + initPage);
+        });
+        initReveal();
+        initStaggerAnimations();
+
+        // ══════════════════════════════════════════════════
+        // PRAYER FORM → WHATSAPP
+        // ══════════════════════════════════════════════════
+        document.getElementById('prayer-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('pf-name').value.trim();
+            const category = document.getElementById('pf-category').value;
+            const message = document.getElementById('pf-message').value.trim();
+            const errorBox = document.getElementById('pf-error');
+            const errorMsg = document.getElementById('pf-error-msg');
+
+            if (!name && !message) {
+                errorMsg.textContent = 'Please enter your name and prayer request.';
+                errorBox.classList.add('show');
+                return;
+            }
+            if (!name) {
+                errorMsg.textContent = 'Please enter your name.';
+                errorBox.classList.add('show');
+                return;
+            }
+            if (!message) {
+                errorMsg.textContent = 'Please enter your prayer request.';
+                errorBox.classList.add('show');
+                return;
+            }
+            errorBox.classList.remove('show');
+
+            const text =
+                `🙏 Prayer Request\n` +
+                `Name: ${name}\n` +
+                `Category: ${category}\n` +
+                `Message: ${message}`;
+
+            // REPLACE 91XXXXXXXXXX with the actual church WhatsApp number
+            const phone = '919866766434';
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+            window.open(url, '_blank');
+            gtag('event', 'prayer_request_sent', { method: 'whatsapp' });
+        });
+    </script>
+
+    <!-- ══ WHATSAPP FLOATING BUTTON ══════════════════ -->
+    <a class="wa-float"
+        href="https://wa.me/919866766434?text=Hello%2C%20I%27d%20like%20to%20know%20more%20about%20Zion%20Prayer%20Tower"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat with us on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="wa-tooltip">Chat with us</span>
+    </a>
+
+</body>
+
+</html>

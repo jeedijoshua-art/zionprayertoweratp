@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us – Zion Prayer Tower ATP</title>
+    <meta name="description" content="Learn about Zion Prayer Tower ATP — our story, mission, and core beliefs rooted in the True Vine, Jesus Christ." />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Crimson+Pro:wght@300;400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+    <!-- ══ NAVIGATION ══════════════════════════════════════ -->
+    <nav class="nav">
+        <a class="nav-brand" href="index.html">✝ ZION PRAYER TOWER</a>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="sermons.html">Sermons</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="prayer.html">Prayer</a></li>
+            <li><a href="give.html">Give</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ══ PAGE HERO ═══════════════════════════════════════ -->
+    <div class="page-hero">
+        <h1>About Us</h1>
+        <p>Our Story &nbsp;·&nbsp; What We Believe</p>
+    </div>
+
+    <!-- ══ ABOUT ═══════════════════════════════════════════ -->
+    <section id="about" class="alt">
+        <p class="section-label reveal">Our Story</p>
+        <h2 class="section-title reveal">Rooted in the True Vine</h2>
+        <div class="section-rule reveal"><span class="section-rule-icon">🍇</span></div>
+
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>
+                    Zion Prayer Tower ATP is a Spirit-filled, community-rooted church in Avinashi, Tamil Nadu. We are a
+                    people grafted into the True Vine — Jesus Christ — drawing life, strength, and purpose from Him alone.
+                </p>
+                <p>
+                    Just as the Gardener tends the vineyard with care, pruning what is unfruitful and binding the broken
+                    branches to the healthy vine, God has been faithfully at work in this congregation — restoring,
+                    renewing, and reviving hearts.
+                </p>
+                <p>
+                    Every person who walks through our doors is welcomed — the weary, the broken, the seeker, and the
+                    faithful. You have a home here.
+                </p>
+            </div>
+            <div class="vine-box reveal">
+                <blockquote>
+                    "Every branch in me that does not bear fruit He takes away, and every branch that does bear fruit He
+                    prunes, that it may bear more fruit."
+                </blockquote>
+                <cite>— John 15:2 (ESV)</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ BELIEF PILLARS ══════════════════════════════════ -->
+    <section id="beliefs">
+        <p class="section-label reveal">What We Believe</p>
+        <h2 class="section-title reveal">The Branches We Stand On</h2>
+        <div class="section-rule reveal"><span class="section-rule-icon">✝</span></div>
+
+        <div class="pillars-grid">
+            <div class="pillar reveal">
+                <div class="pillar-icon">📖</div>
+                <h3>The Word</h3>
+                <p>We stand on the Holy Bible as the inspired, inerrant Word of God — the foundation of all we believe and do.</p>
+            </div>
+            <div class="pillar reveal">
+                <div class="pillar-icon">🙏</div>
+                <h3>Prayer</h3>
+                <p>Prayer is the lifeblood of this church. We are a house of prayer — interceding for our city, nation, and the nations.</p>
+            </div>
+            <div class="pillar reveal">
+                <div class="pillar-icon">🕊️</div>
+                <h3>The Holy Spirit</h3>
+                <p>We believe in the present-day work of the Holy Spirit — His gifts, His power, and His transforming presence.</p>
+            </div>
+            <div class="pillar reveal">
+                <div class="pillar-icon">❤️</div>
+                <h3>Community</h3>
+                <p>We are a family. We bear one another's burdens, celebrate together, and grow together as one body in Christ.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ FOOTER ════════════════════════════════════════════ -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h2>✝ Zion Prayer Tower ATP</h2>
+                <p>Where GOD Meets His People.<br>Avinashi Town Panchayat, Tamil Nadu, India.</p>
+                <div class="footer-social">
+                    <a href="#" title="Facebook">fb</a>
+                    <a href="#" title="YouTube">yt</a>
+                    <a href="#" title="Instagram">ig</a>
+                    <a href="#" title="WhatsApp">wa</a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="services.html">Service Times</a></li>
+                    <li><a href="sermons.html">Sermons</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="prayer.html">Prayer Request</a></li>
+                    <li><a href="give.html">Give / Donate</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 Zion Prayer Tower ATP &nbsp;·&nbsp; zionprayertoweratp.org &nbsp;·&nbsp; All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); } });
+        }, { threshold: 0.12 });
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
